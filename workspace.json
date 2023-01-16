@@ -1,7 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "react-utils": "libs/react-utils",
     "the-app": "apps/the-app",
-    "the-app-e2e": "apps/the-app-e2e"
+    "the-app-e2e": "apps/the-app-e2e",
+    "utils": "libs/utils"
   }
 }

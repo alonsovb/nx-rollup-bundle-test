@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "core-js": "^3.6.5",
     "lodash": "^4.17.21",
     "react": "17.0.2",

@@ -4,16 +4,36 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
+    "build-new": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/react-utils",
+        "outputPath": "dist/react-utils",
         "tsConfig": "libs/react-utils/tsconfig.lib.json",
         "project": "libs/react-utils/package.json",
         "entryFile": "libs/react-utils/src/index.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "libs/react-utils/rollup.config.js",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/react-utils/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/@alonso/react-utils",
+        "tsConfig": "libs/react-utils/tsconfig.lib.json",
+        "project": "libs/react-utils/package.json",
+        "entryFile": "libs/react-utils/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "swc",
         "assets": [
           {

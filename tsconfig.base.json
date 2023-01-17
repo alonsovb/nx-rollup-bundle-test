@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@alonso/components": ["libs/alonso-components/src/index.ts"],
       "@alonso/react-utils": ["libs/react-utils/src/index.ts"],
       "@alonso/utils": ["libs/utils/src/index.ts"]
     }

@@ -1,0 +1,35 @@
+{
+  "root": "libs/alonso-components",
+  "sourceRoot": "libs/alonso-components/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/@alonso/components",
+        "tsConfig": "libs/alonso-components/tsconfig.lib.json",
+        "project": "libs/alonso-components/package.json",
+        "entryFile": "libs/alonso-components/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/alonso-components/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/alonso-components/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

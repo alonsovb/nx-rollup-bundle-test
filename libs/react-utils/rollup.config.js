@@ -1,8 +1,20 @@
+const fs = require('fs');
 const resolve = require('@rollup/plugin-node-resolve');
 /* const postcss = require('rollup-plugin-postcss') */
 const nrwlConfig = require('@nrwl/react/plugins/bundle-rollup');
 
 const fileExtensions = ['.js', '.jsx', '.ts', '.tsx'];
+
+function getDependencies() {
+  try {
+    const rawData = fs.readFileSync('package.json', 'utf8');
+    const package = JSON.parse(rawData);
+
+    return Object.keys(package.dependencies);
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 function getRollupOptions(options) {
   nrwlConfig(options);
@@ -40,7 +52,7 @@ function getRollupOptions(options) {
       },
     }), */
   );
-  options.external = ['lodash', 'react', 'react-is'];
+  options.external = getDependencies();
   return options;
 }
 module.exports = getRollupOptions;

@@ -55,4 +55,5 @@ function getRollupOptions(options) {
   options.external = getDependencies();
   return options;
 }
+
 module.exports = getRollupOptions;

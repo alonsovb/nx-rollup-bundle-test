@@ -4,11 +4,11 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build-new": {
+    "bundle-all": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/react-utils",
+        "outputPath": "dist/publishable/react-utils",
         "tsConfig": "libs/react-utils/tsconfig.lib.json",
         "project": "libs/react-utils/package.json",
         "entryFile": "libs/react-utils/src/index.ts",

@@ -1,6 +1,6 @@
 {
-  "root": "apps/the-app",
-  "sourceRoot": "apps/the-app/src",
+  "root": "apps/my-app",
+  "sourceRoot": "apps/my-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,14 +9,14 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/the-app",
-        "index": "apps/the-app/src/index.html",
+        "outputPath": "dist/apps/my-app",
+        "index": "apps/my-app/src/index.html",
         "baseHref": "/",
-        "main": "apps/the-app/src/main.tsx",
-        "polyfills": "apps/the-app/src/polyfills.ts",
-        "tsConfig": "apps/the-app/tsconfig.app.json",
-        "assets": ["apps/the-app/src/favicon.ico", "apps/the-app/src/assets"],
-        "styles": ["apps/the-app/src/styles.css"],
+        "main": "apps/my-app/src/main.tsx",
+        "polyfills": "apps/my-app/src/polyfills.ts",
+        "tsConfig": "apps/my-app/tsconfig.app.json",
+        "assets": ["apps/my-app/src/favicon.ico", "apps/my-app/src/assets"],
+        "styles": ["apps/my-app/src/styles.css"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -24,8 +24,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/the-app/src/environments/environment.ts",
-              "with": "apps/the-app/src/environments/environment.prod.ts"
+              "replace": "apps/my-app/src/environments/environment.ts",
+              "with": "apps/my-app/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -40,13 +40,12 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "the-app:build",
-        "hmr": true,
-        "port": 4300
+        "buildTarget": "my-app:build",
+        "hmr": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "the-app:build:production",
+          "buildTarget": "my-app:build:production",
           "hmr": false
         }
       }
@@ -55,14 +54,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/the-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/my-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/the-app"],
+      "outputs": ["coverage/apps/my-app"],
       "options": {
-        "jestConfig": "apps/the-app/jest.config.js",
+        "jestConfig": "apps/my-app/jest.config.js",
         "passWithNoTests": true
       }
     }

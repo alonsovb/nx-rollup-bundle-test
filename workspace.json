@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "alonso-components": "libs/alonso-components",
+    "my-app": "apps/my-app",
     "react-utils": "libs/react-utils",
     "the-app": "apps/the-app",
     "the-app-e2e": "apps/the-app-e2e",

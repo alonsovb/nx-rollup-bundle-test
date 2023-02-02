@@ -2,6 +2,7 @@ const fs = require('fs');
 const resolve = require('@rollup/plugin-node-resolve');
 /* const postcss = require('rollup-plugin-postcss') */
 const nrwlConfig = require('@nrwl/react/plugins/bundle-rollup');
+const generatePackageJson = require('rollup-plugin-generate-package-json');
 
 const fileExtensions = ['.js', '.jsx', '.ts', '.tsx'];
 
@@ -39,6 +40,10 @@ function getRollupOptions(options) {
       preferBuiltins: true,
       extensions: fileExtensions,
       moduleDirectories: ['dist', 'node_modules'],
+    }),
+    generatePackageJson({
+      additionalDependencies: ['pg'],
+      outputFolder: 'dist/publishable/react-utils',
     })
     /* builtins(), */
     /* postcss({
